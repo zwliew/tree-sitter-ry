@@ -1,0 +1,253 @@
+================================================================================
+Complete examples
+================================================================================
+
+record I64Pair {
+  first: i64,
+  second: i64,
+}
+
+/**
+ * Returns the product of two ints.
+ */
+fn mul(args: I64Pair) -> i64 {
+    args.first * args.second
+}
+
+// Calculate the factorial of a number
+fn factorial(x: i64) -> i64 {
+    // Conditionals are supported!
+    if x == 0 {
+        1
+    } else {
+        mul(I64Pair {
+            first: x,
+            second: factorial(x - 1),
+        })
+    }
+}
+
+fn else_fn() -> unit {
+    print("...something we cannot know");
+
+    print("However, I can tell you that the factorial of 10 is...");
+    // Function calling
+    print(factorial(10));
+
+    let mut i = 1;
+    while i != 4 {
+        print("Current value of i is:");
+        print(i);
+        i *= 2;
+    };
+}
+
+// The main function
+fn main() -> i64 {
+    let three: i64 = 3;
+    let four_point_three: f64 = 2.15 * 2.0;
+    let meaning_of_life = three * 14 + 1; // Type definitions are optional
+
+    print("Hello, world!");
+    print("The meaning of life is...");
+
+    let cond: bool = meaning_of_life == 42;
+    if cond {
+        print(meaning_of_life);
+    } else {
+        else_fn();
+    };
+    0
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (record_definition
+    name: (type_identifier)
+    body: (field_declaration_list
+      (field_declaration
+        name: (field_identifier)
+        type: (primitive_type))
+      (field_declaration
+        name: (field_identifier)
+        type: (primitive_type))))
+  (block_comment)
+  (function_definition
+    name: (identifier)
+    parameters: (parameters
+      (parameter
+        name: (identifier)
+        type: (type_identifier)))
+    return_type: (primitive_type)
+    body: (block
+      (binary_expression
+        left: (field_expression
+          value: (identifier)
+          field: (field_identifier))
+        right: (field_expression
+          value: (identifier)
+          field: (field_identifier)))))
+  (line_comment)
+  (function_definition
+    name: (identifier)
+    parameters: (parameters
+      (parameter
+        name: (identifier)
+        type: (primitive_type)))
+    return_type: (primitive_type)
+    body: (block
+      (line_comment)
+      (if_expression
+        condition: (binary_expression
+          left: (identifier)
+          right: (identifier
+            (integer_literal)))
+        consequence: (block
+          (identifier
+            (integer_literal)))
+        alternative: (else_clause
+          (block
+            (call_expression
+              function: (identifier)
+              arguments: (arguments
+                (record_expression
+                  name: (type_identifier)
+                  body: (field_initializer_list
+                    (field_initializer
+                      field: (field_identifier)
+                      value: (identifier))
+                    (field_initializer
+                      field: (field_identifier)
+                      value: (call_expression
+                        function: (identifier)
+                        arguments: (arguments
+                          (binary_expression
+                            left: (identifier)
+                            right: (identifier
+                              (integer_literal)))))))))))))))
+  (function_definition
+    name: (identifier)
+    parameters: (parameters)
+    return_type: (type_identifier)
+    body: (block
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (arguments
+            (identifier
+              (string_literal
+                (string_content))))))
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (arguments
+            (identifier
+              (string_literal
+                (string_content))))))
+      (line_comment)
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (arguments
+            (call_expression
+              function: (identifier)
+              arguments: (arguments
+                (identifier
+                  (integer_literal)))))))
+      (let_declaration
+        (mutable_specifier)
+        name: (identifier)
+        value: (identifier
+          (integer_literal)))
+      (expression_statement
+        (while_expression
+          condition: (binary_expression
+            left: (identifier)
+            right: (identifier
+              (integer_literal)))
+          body: (block
+            (expression_statement
+              (call_expression
+                function: (identifier)
+                arguments: (arguments
+                  (identifier
+                    (string_literal
+                      (string_content))))))
+            (expression_statement
+              (call_expression
+                function: (identifier)
+                arguments: (arguments
+                  (identifier))))
+            (expression_statement
+              (compound_assignment_expression
+                left: (identifier)
+                right: (identifier
+                  (integer_literal)))))))))
+  (line_comment)
+  (function_definition
+    name: (identifier)
+    parameters: (parameters)
+    return_type: (primitive_type)
+    body: (block
+      (let_declaration
+        name: (identifier)
+        type: (primitive_type)
+        value: (identifier
+          (integer_literal)))
+      (let_declaration
+        name: (identifier)
+        type: (primitive_type)
+        value: (binary_expression
+          left: (identifier
+            (float_literal))
+          right: (identifier
+            (float_literal))))
+      (let_declaration
+        name: (identifier)
+        value: (binary_expression
+          left: (binary_expression
+            left: (identifier)
+            right: (identifier
+              (integer_literal)))
+          right: (identifier
+            (integer_literal))))
+      (line_comment)
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (arguments
+            (identifier
+              (string_literal
+                (string_content))))))
+      (expression_statement
+        (call_expression
+          function: (identifier)
+          arguments: (arguments
+            (identifier
+              (string_literal
+                (string_content))))))
+      (let_declaration
+        name: (identifier)
+        type: (type_identifier)
+        value: (binary_expression
+          left: (identifier)
+          right: (identifier
+            (integer_literal))))
+      (expression_statement
+        (if_expression
+          condition: (identifier)
+          consequence: (block
+            (expression_statement
+              (call_expression
+                function: (identifier)
+                arguments: (arguments
+                  (identifier)))))
+          alternative: (else_clause
+            (block
+              (expression_statement
+                (call_expression
+                  function: (identifier)
+                  arguments: (arguments)))))))
+      (identifier
+    (integer_literal)))))

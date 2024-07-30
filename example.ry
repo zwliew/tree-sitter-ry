@@ -1,0 +1,57 @@
+record I64Pair {
+  first: i64,
+  second: i64,
+}
+
+/**
+ * Returns the product of two ints.
+ */
+fn mul(args: I64Pair) -> i64 {
+    args.first * args.second
+}
+
+// Calculate the factorial of a number
+fn factorial(x: i64) -> i64 {
+    // Conditionals are supported!
+    if x == 0 {
+        1
+    } else {
+        mul(I64Pair {
+            first: x,
+            second: factorial(x - 1),
+        })
+    }
+}
+
+fn else_fn() -> unit {
+    print("...something we cannot know");
+
+    print("However, I can tell you that the factorial of 10 is...");
+    // Function calling
+    print(factorial(10));
+
+    let mut i = 1;
+    while i != 4 {
+        print("Current value of i is:");
+        print(i);
+        i *= 2;
+    };
+}
+
+// The main function
+fn main() -> i64 {
+    let three: i64 = 3;
+    let four_point_three: f64 = 2.15 * 2.0;
+    let meaning_of_life = three * 14 + 1; // Type definitions are optional
+
+    print("Hello, world!");
+    print("The meaning of life is...");
+
+    let cond: bool = meaning_of_life == 42;
+    if cond {
+        print(meaning_of_life);
+    } else {
+        else_fn();
+    };
+    0
+}
