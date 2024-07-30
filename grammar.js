@@ -85,7 +85,6 @@ module.exports = grammar({
       prec.left($.identifier),
       $.call_expression,
       alias($._literal, $.identifier),
-      $.unit_expression,
       $.field_expression,
       $.binary_expression,
       $.record_expression,
@@ -101,7 +100,6 @@ module.exports = grammar({
       $.string_literal,
     ),
 
-    unit_expression: _ => seq('(', ')'),
     boolean_literal: _ => choice('true', 'false'),
     integer_literal: _ => /\d+/,
     float_literal: _ => /\d+\.\d+/,
@@ -247,7 +245,7 @@ module.exports = grammar({
       $._type_identifier,
     ),
 
-    unit_type: _ => seq('(', ')'),
+    unit_type: _ => "unit",
     primitive_type: _ => choice(
       'i64', 'f64',
     ),

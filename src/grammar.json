@@ -259,10 +259,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "unit_expression"
-        },
-        {
-          "type": "SYMBOL",
           "name": "field_expression"
         },
         {
@@ -305,19 +301,6 @@
         {
           "type": "SYMBOL",
           "name": "string_literal"
-        }
-      ]
-    },
-    "unit_expression": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": ")"
         }
       ]
     },
@@ -1371,17 +1354,8 @@
       ]
     },
     "unit_type": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
+      "type": "STRING",
+      "value": "unit"
     },
     "primitive_type": {
       "type": "CHOICE",

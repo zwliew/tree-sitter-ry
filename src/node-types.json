@@ -40,10 +40,6 @@
           "named": true
         },
         {
-          "type": "unit_expression",
-          "named": true
-        },
-        {
           "type": "while_expression",
           "named": true
         }
@@ -91,10 +87,6 @@
             "named": true
           },
           {
-            "type": "unit_expression",
-            "named": true
-          },
-          {
             "type": "while_expression",
             "named": true
           }
@@ -134,10 +126,6 @@
           },
           {
             "type": "record_expression",
-            "named": true
-          },
-          {
-            "type": "unit_expression",
             "named": true
           },
           {
@@ -186,10 +174,6 @@
           },
           {
             "type": "record_expression",
-            "named": true
-          },
-          {
-            "type": "unit_expression",
             "named": true
           },
           {
@@ -313,10 +297,6 @@
             "named": true
           },
           {
-            "type": "unit_expression",
-            "named": true
-          },
-          {
             "type": "while_expression",
             "named": true
           }
@@ -370,10 +350,6 @@
         },
         {
           "type": "record_expression",
-          "named": true
-        },
-        {
-          "type": "unit_expression",
           "named": true
         },
         {
@@ -444,10 +420,6 @@
             "named": true
           },
           {
-            "type": "unit_expression",
-            "named": true
-          },
-          {
             "type": "while_expression",
             "named": true
           }
@@ -493,10 +465,6 @@
           },
           {
             "type": "record_expression",
-            "named": true
-          },
-          {
-            "type": "unit_expression",
             "named": true
           },
           {
@@ -588,10 +556,6 @@
             "named": true
           },
           {
-            "type": "unit_expression",
-            "named": true
-          },
-          {
             "type": "while_expression",
             "named": true
           }
@@ -656,10 +620,6 @@
         },
         {
           "type": "record_expression",
-          "named": true
-        },
-        {
-          "type": "unit_expression",
           "named": true
         },
         {
@@ -769,10 +729,6 @@
             "named": true
           },
           {
-            "type": "unit_expression",
-            "named": true
-          },
-          {
             "type": "while_expression",
             "named": true
           }
@@ -828,10 +784,6 @@
           },
           {
             "type": "record_expression",
-            "named": true
-          },
-          {
-            "type": "unit_expression",
             "named": true
           },
           {
@@ -989,10 +941,6 @@
             "named": true
           },
           {
-            "type": "unit_expression",
-            "named": true
-          },
-          {
             "type": "while_expression",
             "named": true
           }
@@ -1076,10 +1024,6 @@
           },
           {
             "type": "record_expression",
-            "named": true
-          },
-          {
-            "type": "unit_expression",
             "named": true
           },
           {
@@ -1256,16 +1200,6 @@
     }
   },
   {
-    "type": "unit_expression",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "unit_type",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "while_expression",
     "named": true,
     "fields": {
@@ -1313,10 +1247,6 @@
           },
           {
             "type": "record_expression",
-            "named": true
-          },
-          {
-            "type": "unit_expression",
             "named": true
           },
           {
@@ -1529,6 +1459,10 @@
   },
   {
     "type": "type_identifier",
+    "named": true
+  },
+  {
+    "type": "unit_type",
     "named": true
   },
   {
