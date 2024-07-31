@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-ln -sf "$(pwd)/queries" "$HOME/.config/nvim/queries/ry"
+mkdir -p "$HOME/.config/nvim/queries"
+ln -s "$(pwd)/queries" "$HOME/.config/nvim/queries/ry"

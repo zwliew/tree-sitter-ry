@@ -1,50 +1,110 @@
-; Identifiers
-
-(type_identifier) @type
-(primitive_type) @type.builtin
-(field_identifier) @property
-
 ; Identifier conventions
+
+(identifier) @variable
 
 ; Assume all-caps names are constants
 ((identifier) @constant
- (#match? @constant "^[A-Z][A-Z\\d_]+$'"))
+  (#lua-match? @constant "^[A-Z][A-Z%d_]*$"))
 
-; Function calls
+; Other identifiers
+(type_identifier) @type
 
-(call_expression
-  function: (identifier) @function)
-(call_expression
-  function: (field_expression
-    field: (field_identifier) @function.method))
+(primitive_type) @type.builtin
+
+(field_identifier) @variable.member
 
 ; Function definitions
+(function_definition
+  (identifier) @function)
 
-(function_definition (identifier) @function)
+(parameter
+  [
+    (identifier)
+  ] @variable.parameter)
 
-(line_comment) @comment
-(block_comment) @comment
+; Function calls
+(call_expression
+  function: (identifier) @function.call)
 
-"(" @punctuation.bracket
-")" @punctuation.bracket
-"{" @punctuation.bracket
-"}" @punctuation.bracket
+(call_expression
+  function: (field_expression
+    field: (field_identifier) @function.call))
 
-"." @punctuation.delimiter
-"," @punctuation.delimiter
-";" @punctuation.delimiter
+; Literals
+[
+  (line_comment)
+  (block_comment)
+] @comment @spell
 
-(parameter (identifier) @variable.parameter)
-
-"else" @keyword
-"fn" @keyword
-"if" @keyword
-"let" @keyword
-"record" @keyword
-"while" @keyword
-
+(boolean_literal) @boolean
+(integer_literal) @number
+(float_literal) @number.float
 (string_literal) @string
 
-(boolean_literal) @constant.builtin
-(integer_literal) @constant.builtin
-(float_literal) @constant.builtin
+[
+  "let"
+] @keyword
+
+[
+  "record"
+] @keyword.type
+
+[
+  (mutable_specifier)
+] @keyword.modifier
+
+"fn" @keyword.function
+
+[
+  "if"
+  "else"
+] @keyword.conditional
+
+[
+  "while"
+] @keyword.repeat
+
+; Operators
+[
+ "!="
+ "%"
+ "%="
+ "&"
+ "&&"
+ "&="
+ "*"
+ "*="
+ "+"
+ "+="
+ "-"
+ "-="
+ "/"
+ "/="
+ "<"
+ "<="
+ "="
+ "=="
+ ">"
+ ">="
+ "^"
+ "^="
+ "|"
+ "|="
+ "||"
+] @operator
+
+; Punctuation
+[
+  "("
+  ")"
+  "{"
+  "}"
+] @punctuation.bracket
+
+[
+  ","
+  "."
+  ":"
+  ";"
+  "->"
+] @punctuation.delimiter

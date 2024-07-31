@@ -1341,10 +1341,6 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "unit_type"
-        },
-        {
-          "type": "SYMBOL",
           "name": "primitive_type"
         },
         {
@@ -1352,10 +1348,6 @@
           "name": "_type_identifier"
         }
       ]
-    },
-    "unit_type": {
-      "type": "STRING",
-      "value": "unit"
     },
     "primitive_type": {
       "type": "CHOICE",
@@ -1367,6 +1359,14 @@
         {
           "type": "STRING",
           "value": "f64"
+        },
+        {
+          "type": "STRING",
+          "value": "bool"
+        },
+        {
+          "type": "STRING",
+          "value": "unit"
         }
       ]
     },

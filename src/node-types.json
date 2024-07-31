@@ -654,10 +654,6 @@
           {
             "type": "type_identifier",
             "named": true
-          },
-          {
-            "type": "unit_type",
-            "named": true
           }
         ]
       }
@@ -854,10 +850,6 @@
           {
             "type": "type_identifier",
             "named": true
-          },
-          {
-            "type": "unit_type",
-            "named": true
           }
         ]
       }
@@ -983,10 +975,6 @@
           {
             "type": "type_identifier",
             "named": true
-          },
-          {
-            "type": "unit_type",
-            "named": true
           }
         ]
       },
@@ -1073,10 +1061,6 @@
           },
           {
             "type": "type_identifier",
-            "named": true
-          },
-          {
-            "type": "unit_type",
             "named": true
           }
         ]
@@ -1402,6 +1386,10 @@
     "named": false
   },
   {
+    "type": "bool",
+    "named": false
+  },
+  {
     "type": "else",
     "named": false
   },
@@ -1462,8 +1450,8 @@
     "named": true
   },
   {
-    "type": "unit_type",
-    "named": true
+    "type": "unit",
+    "named": false
   },
   {
     "type": "while",

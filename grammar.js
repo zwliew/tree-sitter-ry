@@ -240,14 +240,12 @@ module.exports = grammar({
     ),
 
     _type: $ => choice(
-      $.unit_type,
       $.primitive_type,
       $._type_identifier,
     ),
 
-    unit_type: _ => "unit",
     primitive_type: _ => choice(
-      'i64', 'f64',
+      'i64', 'f64', 'bool', "unit",
     ),
 
     identifier: _ => /[a-zA-Z_][a-zA-Z0-9_]*/,
